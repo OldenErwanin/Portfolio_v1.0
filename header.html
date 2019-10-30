@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OldernErwanin Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900|Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <section class="head" id="home">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home"><img src="../img/logo.png" alt="Logo"></a>
+            </div>
+            <ul id="top-menu">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#about">About me</a></li>
+                <li><a href="#references">References</a></li>
+                <li><a href="#cv">My CV</a></li>
+                <li><a href="#progress">Progression</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="other">
+            <img src="../img/email.png" alt="Email icon"><a href="mailto:oldenerwanin@gmail.com" target="_blank">Contact me via e-mail</a><br>
+            <img src="../img/fiverr.png" alt="Email icon"><a href="https://www.fiverr.com/erwanin" target="_blank">Check my fiverr profile</a>
+        </div>
+        <div class="title" data-aos="zoom-in" data-aos-duration="1500">
+            <h1>Adam Tyihak</h1>
+            <h2>OldenErwanin</h2>
+            <h3>I am a freelance junior<br>front-end website developer</h3>
+        </div>
+    </section>
+    <script>
+        $(function() {
+            $(document).scroll(function() {
+                var $nav = $(".navbar");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+
+
+        AOS.init();
+
+        jQuery(document).ready(function(jQuery) {
+            var topMenu = jQuery("#top-menu"),
+                offset = 40,
+                topMenuHeight = topMenu.outerHeight() + offset,
+                // All list items
+                menuItems = topMenu.find('a[href*="#"]'),
+                // Anchors corresponding to menu items
+                scrollItems = menuItems.map(function() {
+                    var href = jQuery(this).attr("href"),
+                        id = href.substring(href.indexOf('#')),
+                        item = jQuery(id);
+                    //console.log(item)
+                    if (item.length) {
+                        return item;
+                    }
+                });
+
+            // so we can get a fancy scroll animation
+            menuItems.click(function(e) {
+                var href = jQuery(this).attr("href"),
+                    id = href.substring(href.indexOf('#'));
+                offsetTop = href === "#" ? 0 : jQuery(id).offset().top - topMenuHeight + 1;
+                jQuery('html, body').stop().animate({
+                    scrollTop: offsetTop
+                }, 300);
+                e.preventDefault();
+            });
+
+            // Bind to scroll
+            jQuery(window).scroll(function() {
+                // Get container scroll position
+                var fromTop = jQuery(this).scrollTop() + topMenuHeight;
+
+                // Get id of current scroll item
+                var cur = scrollItems.map(function() {
+                    if (jQuery(this).offset().top < fromTop)
+                        return this;
+                });
+
+                // Get the id of the current element
+                cur = cur[cur.length - 1];
+                var id = cur && cur.length ? cur[0].id : "";
+
+                menuItems.parent().removeClass("active");
+                if (id) {
+                    menuItems.parent().end().filter("[href*='#" + id + "']").parent().addClass("active");
+                }
+
+            })
+        })
+    </script>
+</body>
+
+</html>

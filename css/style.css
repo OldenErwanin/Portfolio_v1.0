@@ -1,0 +1,351 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ECF0F1;
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    background-image: url("../img/bg2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 30px black;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.head nav {
+    width: 1220px;
+    height: 95px;
+    overflow: hidden;
+    float: left;
+    position: fixed;
+    z-index: 10;
+}
+
+.head .logo {
+    float: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 160px;
+    height: 78px;
+    transform: skew(-20deg);
+    margin: 0 20px 3px 0;
+    position: relative;
+    left: -15px;
+    border-radius: 0 0 5px 0;
+    transition: .4s;
+}
+
+.head img {
+    width: 70px;
+    margin: 4px 0;
+    margin-left: 60px;
+    transform: skew(20deg);
+    transition: .4s;
+}
+
+.head ul li {
+    float: left;
+    height: 70px;
+    margin: 5px 5px;
+    line-height: 70px;
+    text-align: center;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: skew(-20deg);
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+    right: 0;
+    -webkit-transition: background-color 0.3s, top 0.3s, right 0.3s;
+    transition: background-color 0.3s, top 0.3s, right 0.3s;
+    transition: .4s;
+}
+
+.head ul li a {
+    display: block;
+    padding: 0 25px;
+    text-decoration: none;
+    font-family: Catamaran;
+    font-size: 30px;
+    color: rgb(220, 220, 220);
+    transform: skew(20deg);
+    transition: .4s;
+}
+
+.head ul li:not(.active):hover {
+    background-color: rgba(212, 122, 47, 0.5);
+    position: relative;
+    top: 14px;
+    right: 5px;
+    transition: .4s;
+}
+
+.head ul li.active {
+    border: 2px solid rgba(212, 122, 47, 0.5);
+    position: relative;
+    top: 6px;
+    right: 2px;
+    transition: .4s;
+}
+
+.head ul li.active a {
+    color: rgb(212, 122, 47);
+    font-weight: 500;
+    transition: .4s;
+}
+
+.head .navbar.scrolled .logo {
+    width: 120px;
+    height: 63px;
+    transition: .4s;
+}
+
+.head .navbar.scrolled .logo img {
+    width: 55px;
+    margin-left: 45px;
+    transition: .4s;
+}
+
+.head .navbar.scrolled ul li {
+    line-height: 55px;
+    height: 55px;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: .4s;
+}
+
+.head .navbar.scrolled ul li a {
+    font-size: 23px;
+    transition: .4s;
+}
+
+.head .other {
+    width: 500px;
+    height: 78px;
+    float: left;
+    margin-left: 1320px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: skew(-20deg);
+    position: relative;
+    left: 15px;
+    border-radius: 0 0 0 5px;
+}
+
+.head .other img {
+    width: 28px;
+    opacity: 0.8;
+    transform: skew(20deg);
+    position: relative;
+    left: -20px;
+}
+
+.head .other a {
+    text-decoration: none;
+    color: rgb(220, 220, 220);
+    position: relative;
+    left: -10px;
+    bottom: 10px;
+    transform: skew(20deg);
+    font-family: Catamaran;
+    font-size: 16px;
+}
+
+.head .other a:hover {
+    color: rgb(226, 135, 61);
+}
+
+.head .title {
+    width: 500px;
+    margin: 300px auto;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Catamaran;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+}
+
+.head .title h1 {
+    font-size: 70px;
+    color: rgb(220, 220, 220);
+    text-shadow: 0 0 4px #222;
+}
+
+.head .title h2 {
+    font-size: 40px;
+    color: #B6621F;
+    text-shadow: 0 0 4px #111;
+}
+
+.head .title h3 {
+    margin-top: 20px;
+    font-family: Cormorant;
+    font-size: 30px;
+    color: rgba(220, 220, 220, 0.7);
+    text-shadow: 0 0 4px #222;
+    font-weight: 400;
+    font-style: italic;
+}
+
+#about {
+    overflow: hidden;
+    background-color: rgb(37, 36, 61);
+    height: 700px;
+}
+
+#references {
+    overflow: hidden;
+    background-color: rgb(121, 119, 184);
+    height: 100vh;
+}
+
+#references .container {
+    width: 1300px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+#references .body {
+    float: left;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    transform: skew(-15deg);
+    border-radius: 5px;
+    margin: 40px 5%;
+    transition: .5s;
+    overflow: hidden;
+    position: relative;
+}
+
+#references .body:hover {
+    transform: skew(0deg);
+}
+
+#references .body .hide {
+    opacity: 0;
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    height: 300px;
+    width: 100%;
+    transition: .5s;
+    background-color: rgba(59, 59, 59, 0.5);
+    padding: 5px;
+    font-family: Catamaran;
+    font-size: 25px;
+    color: #111;
+    font-weight: 500;
+}
+
+#references .body:hover .hide {
+    opacity: 1;
+}
+
+#references .body .hide .title {
+    font-weight: 700;
+    color: #B6621F;
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    text-shadow: 0 0 3px #111;
+    font-size: 28px;
+}
+
+#references .body .hide .tech,
+#references .body .hide .message {
+    color: rgb(180, 110, 52);
+    text-shadow: 0 0 3px #111;
+}
+
+#references .body .hide span {
+    color: rgb(201, 201, 201);
+    display: block;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+#references .body .hide .source button {
+    float: left;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 2px solid rgb(211, 211, 211);
+    background: none;
+    font-family: Catamaran;
+    font-size: 15px;
+    font-weight: 800;
+    color: rgb(211, 211, 211);
+    transform: skew(-20deg);
+    border-radius: 5px;
+    transition: .5s;
+}
+
+#references .body .hide .live button {
+    float: left;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    width: fit-content;
+    padding: 5px 10px;
+    border: 2px solid rgb(211, 211, 211);
+    background: none;
+    font-family: Catamaran;
+    font-size: 15px;
+    font-weight: 800;
+    color: rgb(211, 211, 211);
+    transform: skew(-20deg);
+    border-radius: 5px;
+    transition: .5s;
+}
+
+#references .body .hide .btn-text {
+    transform: skew(20deg);
+    transition: .5s;
+}
+
+#references .body .hide button:hover {
+    transform: skew(0deg);
+    background-color: rgb(211, 211, 211);
+}
+
+#references .body .hide button:hover .btn-text {
+    transform: skew(0deg);
+    color: #B6621F;
+}
+
+#references .body img {
+    position: relative;
+    left: -40px;
+    transform: skew(15deg);
+    width: 380px;
+    height: 300px;
+    transition: .5s;
+}
+
+#references .body:hover img {
+    transform: skew(0deg);
+}
+
+.section-title {
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 25px;
+    text-align: center;
+    font-family: Catamaran;
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    font-size: 34px;
+}
